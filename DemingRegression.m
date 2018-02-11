@@ -40,7 +40,7 @@ function [beta, stats] = DemingRegression(x,y,lambda,alpha)
   Sxy = (1/(n-1)) *sum((x - xbar).*(y-ybar));
   Syy = (1/(n-1)) * sum((y - ybar).^2)
   
-  B1 = (Syy - delta*Sxx + sqrt((Syy-delta*Sxx)^2 + 4*delta*Sxy^2))/(2*Sxy);
+  B1 = (Syy - lambda*Sxx + sqrt((Syy-lambda*Sxx)^2 + 4*lambda*Sxy^2))/(2*Sxy);
   
   B0 = ybar-B1*xbar;
   
